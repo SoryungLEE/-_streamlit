@@ -1,6 +1,7 @@
-import numpy as np
-import pandas as pd
-from PIL import Image
-from streamlit_folium import st_folium
-import pickle, folium, gzip
-import call_model
+numpy
+pandas
+PIL
+streamlit_folium
+pickle
+folium
+gzip
