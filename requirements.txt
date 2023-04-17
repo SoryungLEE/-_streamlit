@@ -2,6 +2,5 @@ numpy
 pandas
 Pillow
 streamlit_folium
-pickle
 folium
 gzip
