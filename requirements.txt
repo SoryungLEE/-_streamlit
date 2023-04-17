@@ -3,4 +3,3 @@ pandas
 Pillow
 streamlit_folium
 folium
-gzip
