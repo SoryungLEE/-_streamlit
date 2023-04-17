@@ -1,6 +1,6 @@
 numpy
 pandas
-PIL
+Pillow
 streamlit_folium
 pickle
 folium
