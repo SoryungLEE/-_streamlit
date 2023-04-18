@@ -3,4 +3,4 @@ pandas
 Pillow
 streamlit_folium
 folium
-sklearn
+scikit-learn
