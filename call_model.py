@@ -6,12 +6,12 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import pickle
 
 def call_model(n_estimators, max_depth, min_samples_split, min_samples_leaf):
-    print('들어왔어요')
+#     print('들어왔어요')
 
     if max_depth==0:
         max_depth=None
 
-    df = pd.read_csv("data_fin.csv", encoding="cp949")
+    df = pd.read_csv("data_fin.zip", compression="zip", encoding="cp949")
 
     model = RandomForestRegressor(n_estimators=n_estimators, random_state=42,
                                   max_depth=max_depth,
