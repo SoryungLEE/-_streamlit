@@ -3,3 +3,4 @@ pandas
 Pillow
 streamlit_folium
 folium
+sklearn
