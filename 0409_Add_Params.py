@@ -129,5 +129,5 @@ with st.form('My Form'):
         folium.Marker([latitude, longitude], icon=folium.Icon(color='red'),
                       popup=tooltip_prn, tooltip=tooltip_prn).add_to(loc_map)
         st_folium(loc_map, width=1400)
-        col1.write("#### ✨ 예상 온도는 {0:0.3f} 입니다 ✨".format(y_pred))
+        col1.write("#### ▶ 예상 온도는 {0:0.3f}℃입니다 ".format(y_pred))
 
