@@ -9,19 +9,19 @@ import call_model
 im = Image.open("AI_Lab_logo.jpg")
 
 st.set_page_config(
-    page_title="계량기 동파예측",
+    page_title="계량기 동파예측(Meter Freeze preiction)",
     page_icon='📈',
     layout="wide",
 )
 
 col1, col2 = st.columns([1, 8])
 col1.image(im, width=100)
-col2.write("# 지방상수도 함내 계량기 동파 예측")
+col2.write("# 지방상수도 함내 계량기 동파 예측(Predicting meter freezes in municipal water boxes)")
 
 
-st.write("##### 📌 예측을 위한 데이터를 입력하세요")
+st.write("##### 📌 예측을 위한 데이터를 입력하세요(Select Data)")
 with st.form('My Form'):
-    st.markdown("##### ⁎ 파라미터 선택")
+    st.markdown("##### ⁎ 파라미터 선택(Selecting Parameters)")
     col1, col2, col3, col4 = st.columns(4)
     n_estimators = col1.slider("트리 개수(n_estimators)", min_value=0, max_value=500, step=1, value=100)
     col1.text_area("", value="• Number of trees\n"
@@ -61,27 +61,27 @@ with st.form('My Form'):
     st.markdown("")
 
     # 원래 있던 입력변수들
-    st.markdown("##### ⁎ 독립변수 선택")
+    st.markdown("##### ⁎ 독립변수 선택(Selecting independent variables)")
     col1, col2, col3, col4, col5 = st.columns(5)
-    latitude = col1.text_input("위도(34~39)", "37.41465")
+    latitude = col1.text_input("위도(Latitude, 34~39)", "37.41465")
     latitude = float(latitude)
-    longitude = col2.text_input("경도(126~130)", "127.2876")
+    longitude = col2.text_input("경도(Longitude, 126~130)", "127.2876")
     longitude = float(longitude)
-    elevation = col3.text_input("고도", "62.91475")
+    elevation = col3.text_input("고도(Altitude)", "62.91475")
     elevation = float(elevation)
-    warmer = col4.selectbox("보온재", ['없음', '많음'])
+    warmer = col4.selectbox("보온재(Insulation)", ['없음', '많음'])
     nwarmer = 1 if warmer == '많음' else 0
-    shade = col5.selectbox("음/양지", ['양지', '음지'])
+    shade = col5.selectbox("음/양지(Shade/Sunny)", ['양지', '음지'])
     nshade = 1 if shade == '양지' else 0
 
     col1, col2, col3, col4 = st.columns(4)
-    temperature = col1.slider("기온", -50.0, 50.0, -7.1)
-    humidity = col2.slider("습도", 0.0, 100.0, 71.1)
-    wind_speed = col3.slider("풍속", 0.0, 50.0, 1.9)
-    rainfall = col4.slider("강수량", 0.0, 100.0, 0.0)
+    temperature = col1.slider("기온(Temperature)", -50.0, 50.0, -7.1)
+    humidity = col2.slider("습도(Humidity)", 0.0, 100.0, 71.1)
+    wind_speed = col3.slider("풍속(Wind Speed)", 0.0, 50.0, 1.9)
+    rainfall = col4.slider("강수량(Rainfall)", 0.0, 100.0, 0.0)
 
     col1, col2 = st.columns([8, 1])
-    submit = col2.form_submit_button('🎓 동파예측')
+    submit = col2.form_submit_button('🎓 동파예측(Prediction)')
 
 
     if submit:
@@ -130,4 +130,5 @@ with st.form('My Form'):
                       popup=tooltip_prn, tooltip=tooltip_prn).add_to(loc_map)
         st_folium(loc_map, width=1400)
         col1.write("#### ▶ 예상 온도는 {0:0.3f}℃입니다 ".format(y_pred))
+        col1.write("#### ▶ The expected temperature is {0:0.3f}℃ ".format(y_pred))
 
