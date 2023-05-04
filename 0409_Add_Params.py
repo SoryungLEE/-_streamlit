@@ -19,6 +19,8 @@ col1.image(im, width=100)
 col2.write("# 지방상수도 함내 계량기 동파 예측")
 col2.write("### (Predicting meter freezes in municipal water boxes)")
 col2.write("")
+col2.write("")
+col2.write("")
 
 st.write("##### 📌 예측을 위한 데이터를 입력하세요(Select Data)")
 with st.form('My Form'):
