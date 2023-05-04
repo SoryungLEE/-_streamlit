@@ -16,7 +16,7 @@ st.set_page_config(
 
 col1, col2 = st.columns([1, 8])
 col1.image(im, width=100)
-col2.write("# 지방상수도 함내 계량기 동파 예측(Predicting meter freezes in municipal water boxes)")
+col2.write("# 지방상수도 함내 계량기 동파 예측")
 col2.write("### (Predicting meter freezes in municipal water boxes)")
 
 
